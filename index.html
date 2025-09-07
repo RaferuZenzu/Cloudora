@@ -1,78 +1,73 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Cloudora — Local File Vault</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudora - File Manager Lokal</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <header class="topbar">
+    <!-- Topbar -->
+    <div class="topbar">
       <div class="brand">
         <div class="logo">☁️</div>
         <div>
           <h1>Cloudora</h1>
-          <p class="tag">Local file vault — simpan & buka tanpa server</p>
+          <p class="tag">File Manager Lokal</p>
         </div>
       </div>
-      <div class="storage-info" id="storageInfo">Storage: —</div>
-    </header>
+      <div id="storageInfo">Storage: —</div>
+    </div>
 
-    <main>
-      <!-- Upload area -->
-      <section class="card upload-card">
-        <h2>Upload File</h2>
+    <!-- Upload Card -->
+    <div class="card upload-card">
+      <div class="row">
+        <label id="fileLabel" for="fileInput">Pilih File (multi)</label>
+        <input type="file" id="fileInput" multiple class="hidden">
+        <input type="text" id="inputJudul" placeholder="Judul (opsional)">
+        <button id="saveBtn" class="btn primary">Simpan</button>
+      </div>
+    </div>
 
-        <div class="row">
-          <input type="text" id="inputJudul" placeholder="Masukkan judul (opsional)" />
-          <input type="file" id="fileInput" hidden />
-          <label for="fileInput" id="fileLabel">Choose File</label>
-          <button id="saveBtn" class="btn primary">Simpan</button>
-          <button id="clearAllBtn" class="btn danger" title="Hapus semua file">Hapus Semua</button>
-        </div>
+    <!-- Controls -->
+    <div class="row controls" style="margin-bottom: 14px;">
+      <button id="clearAllBtn" class="btn danger">Hapus Semua</button>
+      <button id="listSelectBtn" class="btn">Pilih File</button>
+    </div>
 
-        <div class="small muted">Tip: simpan file kecil agar tidak melebihi kapasitas LocalStorage.</div>
-      </section>
+    <!-- Toolbar untuk file terpilih -->
+    <div class="card list-toolbar hidden" id="listToolbar">
+      <span id="selectedCount">0 file dipilih</span>
+      <div class="spacer"></div>
+      <button id="deleteSelectedBtn" class="btn danger">Hapus</button>
+      <button id="cancelSelectBtn" class="btn">Batal</button>
+    </div>
 
-      <!-- Controls -->
-      <section class="card controls">
-        <div class="row">
-          <input type="search" id="searchInput" placeholder="Cari judul..." />
-          <div class="spacer"></div>
-          <div id="countInfo" class="muted">0 file</div>
-        </div>
-      </section>
+    <!-- File List -->
+    <div class="card list-card">
+      <h2>Daftar File</h2>
+      <input type="search" id="searchInput" placeholder="Cari file..." class="row">
+      <ul id="daftarKisi" class="file-list"></ul>
+      <div id="countInfo" class="small muted"></div>
+    </div>
 
-      <!-- File list -->
-      <section class="card list-card">
-        <h2>Daftar File</h2>
-        <div id="listToolbar" class="list-toolbar hidden">
-          <button id="deleteSelectedBtn" class="btn danger">Hapus Terpilih</button>
-          <button id="cancelSelectBtn" class="btn">Batal</button>
-        </div>
-        <ul id="daftarKisi" class="file-list"></ul>
-      </section>
+    <!-- Detail Viewer -->
+    <div class="card hidden" id="detailKisi">
+      <div class="viewer-top">
+        <h2 id="detailJudul"></h2>
+        <button id="backBtn" class="btn">Kembali</button>
+      </div>
+      <div id="detailMeta" class="small muted"></div>
+      <div class="detail-content" id="detailContent"></div>
+      <div class="row" style="margin-top:12px;">
+        <button id="downloadBtn" class="btn primary">Download</button>
+        <button id="deleteBtn" class="btn danger">Hapus</button>
+      </div>
+    </div>
 
-      <!-- Viewer -->
-      <section id="detailKisi" class="card viewer-card hidden">
-        <div class="viewer-top">
-          <button id="backBtn" class="btn">⬅ Kembali</button>
-          <div class="viewer-actions">
-            <button id="downloadBtn" class="btn">Download</button>
-            <button id="deleteBtn" class="btn danger">Hapus</button>
-          </div>
-        </div>
-
-        <h3 id="detailJudul"></h3>
-        <div id="detailMeta" class="muted small"></div>
-        <div id="detailContent" class="detail-content"></div>
-      </section>
-    </main>
-
-    <footer class="footer muted">
-      Cloudora • LocalStorage-based • Tidak mengirim data ke server
-    </footer>
+    <!-- Footer -->
+    <div class="footer">Cloudora © 2025</div>
   </div>
 
   <script src="script.js"></script>
