@@ -50,13 +50,24 @@ body{
 /* Upload row */
 .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 input[type="text"], input[type="search"]{
-  padding:10px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.02);color:inherit;flex:1;
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.03);
+  background:rgba(255,255,255,0.02);
+  color:inherit;
+  flex:1;
 }
 input[type="search"]{min-width:200px}
 
 #fileLabel{
-  padding:10px 14px;border-radius:8px;background:#e6edf3;color:#0d1117;border:1px solid rgba(0,234,255,0.12);
-  cursor:pointer;font-weight:600;transition:all .18s;
+  padding:10px 14px;
+  border-radius:8px;
+  background:#e6edf3;
+  color:#0d1117;
+  border:1px solid rgba(0,234,255,0.12);
+  cursor:pointer;
+  font-weight:600;
+  transition:all .18s;
 }
 #fileLabel:hover{background:#d0d7de}
 #fileLabel.active{background:var(--neon);color:#0d1117}
@@ -64,7 +75,13 @@ input[type="search"]{min-width:200px}
 
 /* Buttons */
 .btn{
-  padding:9px 12px;border-radius:8px;border:none;cursor:pointer;font-weight:700;background:var(--glass);color:inherit;
+  padding:9px 12px;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+  font-weight:700;
+  background:var(--glass);
+  color:inherit;
   transition:transform .08s,opacity .12s;
 }
 .btn:active{transform:translateY(1px)}
@@ -80,7 +97,10 @@ input[type="search"]{min-width:200px}
 .list-card h2{margin-top:0}
 .file-list{list-style:none;padding:0;margin:8px 0;display:flex;flex-direction:column;gap:8px}
 .file-item{
-  display:flex;align-items:center;gap:12px;padding:10px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(0,234,255,0.04);
+  display:flex;align-items:center;gap:12px;padding:10px;
+  border-radius:8px;
+  background:rgba(255,255,255,0.02);
+  border:1px solid rgba(0,234,255,0.04);
 }
 .file-item:hover{background:rgba(0,234,255,0.03)}
 .file-item .meta{flex:1;text-align:left}
@@ -99,6 +119,9 @@ input[type="search"]{min-width:200px}
 .hidden{display:none}
 .spacer{flex:1}
 .count{font-weight:700}
+
+/* Toolbar list */
+.list-toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 
 /* Footer */
 .footer{margin-top:10px;text-align:center;font-size:13px;color:var(--muted)}
